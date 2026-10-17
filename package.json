@@ -1,0 +1,17 @@
+{
+  "name": "canvas-export",
+  "version": "1.0.0",
+  "description": "Export Canvas LMS deadlines and exams to a calendar (.ics or an Add to Google Calendar link) and bundle course files into a .zip, right in the browser. No dependencies. From Canvas+.",
+  "main": "index.js",
+  "files": ["index.js", "README.md", "README.zh-CN.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": ["canvas", "canvas-lms", "ics", "icalendar", "google-calendar", "zip", "browser", "students", "deadlines"],
+  "author": "Baowen Liu (https://www.baowenliu.com)",
+  "homepage": "https://github.com/getcanvasplus/canvas-export#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/getcanvasplus/canvas-export.git" },
+  "bugs": { "url": "https://github.com/getcanvasplus/canvas-export/issues" },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

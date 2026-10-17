@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>canvas-export: zip in the browser</title>
+<!-- Open this file in a browser and click the button: two files are zipped and downloaded, no server involved. -->
+<button id="go">Download example.zip</button>
+<script src="../index.js"></script>
+<script>
+  const { zip } = CanvasExport;
+  document.getElementById('go').onclick = async () => {
+    const enc = new TextEncoder();
+    const blob = zip.build([
+      { name: 'Week 1/notes.txt', data: enc.encode('Lecture notes') },
+      // For big files (e.g. fetched from Canvas) pass a Blob and its CRC-32, computed while downloading:
+      { name: 'Week 2/readme.txt', data: new Blob([enc.encode('Hello')]), crc: zip.crc32(enc.encode('Hello')) }
+    ]);
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'example.zip'; a.click();
+  };
+</script>
